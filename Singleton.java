@@ -1,16 +1,25 @@
 public class Singleton {
 
     private static Singleton instance;
+    private Bank bank;
+
+    private Singleton(){
+
+       bank = new Bank(0);
+    }
 
     // TODO 1 : fix singleton bad implementation
     public static Singleton getInstance() {
-        return new Singleton();
+        if (instance == null){
+            instance = new Singleton();
+        }
+        return instance;
     }
 
-    private Bank bank;
+
 
     public void openAccount(int value) {
-        bank = new Bank(value);
+        this.bank = new Bank(value);
     }
 
     public void deposit(int value) {
@@ -23,5 +32,9 @@ public class Singleton {
 
     public Bank getBank() {
         return bank;
+    }
+
+    public int getTotal() {
+        return bank.getTotal();
     }
 }
