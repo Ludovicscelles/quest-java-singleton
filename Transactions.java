@@ -1,5 +1,8 @@
+// class Transactions
 public class Transactions {
 
+    // public static void transactions() and balance() methods
+    // transactions() should call singleton and do some transactions
     public static void transactions() {
 
         Singleton singleton = Singleton.getInstance();
@@ -10,6 +13,7 @@ public class Transactions {
         singleton.withdraw(47);
     }
 
+    // balance() should call singleton and get total, then print it
     public static void balance() {
 
         // TODO 2 : call singleton and get total
